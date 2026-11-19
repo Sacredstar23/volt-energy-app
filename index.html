@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Volt Energy — simple energy usage dashboard" />
+    <title>Volt Energy</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Volt Energy home">
+        <span class="brand-mark" aria-hidden="true">V</span>
+        <span>Volt Energy</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a class="active" href="#dashboard">Dashboard</a>
+        <a href="#usage">Usage</a>
+        <a href="#settings">Settings</a>
+      </nav>
+      <button class="avatar" type="button" aria-label="Open account menu">SA</button>
+    </header>
+
+    <main id="dashboard">
+      <section class="intro">
+        <div>
+          <p class="eyebrow">OVERVIEW</p>
+          <h1>Good morning, Alex</h1>
+        </div>
+        <button class="period-button" id="periodButton" type="button">
+          This month
+          <span aria-hidden="true">⌄</span>
+        </button>
+      </section>
+
+      <section class="metrics" aria-label="Energy summary">
+        <article class="metric-card">
+          <p>Energy used</p>
+          <strong>642 <span>kWh</span></strong>
+          <small class="positive">↓ 8% from last month</small>
+        </article>
+        <article class="metric-card">
+          <p>Estimated cost</p>
+          <strong>$128.40</strong>
+          <small>Based on current plan</small>
+        </article>
+        <article class="metric-card">
+          <p>Carbon avoided</p>
+          <strong>214 <span>kg</span></strong>
+          <small class="positive">↑ 12% renewable energy</small>
+        </article>
+      </section>
+
+      <section class="grid" id="usage">
+        <article class="panel chart-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">USAGE</p>
+              <h2>Daily consumption</h2>
+            </div>
+            <div class="legend"><span></span> kWh</div>
+          </div>
+          <div class="chart" id="chart" role="img" aria-label="Daily energy consumption chart"></div>
+        </article>
+
+        <article class="panel breakdown-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">BREAKDOWN</p>
+              <h2>By appliance</h2>
+            </div>
+          </div>
+          <div class="breakdown">
+            <div class="breakdown-row">
+              <span>Heating & cooling</span><strong>38%</strong>
+              <div class="bar"><i style="--width: 38%"></i></div>
+            </div>
+            <div class="breakdown-row">
+              <span>Water heating</span><strong>24%</strong>
+              <div class="bar"><i style="--width: 24%"></i></div>
+            </div>
+            <div class="breakdown-row">
+              <span>Appliances</span><strong>21%</strong>
+              <div class="bar"><i style="--width: 21%"></i></div>
+            </div>
+            <div class="breakdown-row">
+              <span>Lighting</span><strong>17%</strong>
+              <div class="bar"><i style="--width: 17%"></i></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="tip" id="settings">
+        <div class="tip-icon" aria-hidden="true">$</div>
+        <div>
+          <p class="eyebrow">SMART TIP</p>
+          <h2>Shift laundry to off-peak hours</h2>
+          <p>You could save approximately <strong>$18/month</strong> by running high-energy appliances after 9 PM.</p>
+        </div>
+        <button type="button" id="tipButton">View tip</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
